@@ -13,13 +13,13 @@ select current_user();
 select user();
 
 #1) grant - it gives previlege(permission) to users to perform actions
-grant select, update on users to root@localhost;
+grant select on users to root2;
 
 #2) revoke - it takes back the previlege given to users
-revoke select, update on users from root@localhost;
+revoke select, update on users from root2;
 
 insert into users values(119,'khampa',45987665,'138493');
 
-update users set Uid = 109 where Uid=119;
+update users set Uname = 'donnk' where Uid=107;
 
 delete from users where Uid = 109;
