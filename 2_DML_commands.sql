@@ -23,5 +23,3 @@ delete from users where Uage is null;
 #3) update - to update records specified values
 update users set Uid = 101 where Uid = 105;
 update users set Uid = 102 where Uid = 106;
-
-

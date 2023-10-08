@@ -10,7 +10,7 @@ use my_database;
 # "DDL" - data definition language [create, alter,drop, rename, truncate]
 # to define database objects[table, view, sequence, etc]
 #1) create - to create a table
-create table users(Uid int, Uname varchar(20),Ucontact int, Upincode char(6));
+create table users(Uid int, Uname varchar(20), Ucontact int, Upincode char(6));
 
 # to view the structure of table
 desc users;
