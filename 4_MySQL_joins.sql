@@ -29,25 +29,31 @@ insert into customer_ values(101,'Paul',23),
 (103,'Mario',25),
 (104,'Joshep',22);
 select * from customer_;
+select uId,cname from customer_;
 
 # SQL joins - joins are used to join two or more tables
 #1) Inner join - it joins the table and return the combination of both the table, only the matching row will be present in the new table
 select * from Users_ inner join customer on Users_.UId = customer.CId;
+select Users_.UId, Users_.Ucontact, customer.cage from Users_ inner join customer on Users_.Uid = customer.Cid;
 
 #2) Left join - it joins both the table and return a table containg all the rows of left table and respective rows of right table
 # if the right column cantain less rowa the remaining are filled with null values
 select * from Users_ left join customer on Users_.UId = customer.cid;
+select Users_.Uname, Users_.uaddress, customer.cid, customer.cname from users_ left join customer on users_.uid = customer.cid;
 
 #3) Right join - it joins bothe the table abd return a table containing all rows of right table and respective left tables
 # if right table have less no of rows than left then only that no. of rows will be added in resulting table
 select * from Users_ right join customer on Users_.UId = customer.cid;
+select users_.uid, customer.cname, customer.cage from users_ right join customer on users_.uid = customer.cid;
 
 #4) Cross join - it gives all the posible combination of records, it dont require any condition
 select * from Users_ cross join customer;
+select Users_.uname, customer.cname from users_ cross join customer;
 
 #5) Natural join - it will join the table through attribute having same name and datadyte and return table with only one attribut and rest of the columns.
 # for this the attribute name must be same in bothe the tables
 select * from Users_ natural join customer_;
+select users_.uname, users_.Uid, customer_.cname, customer_.cage, customer_.Uid from users_ natural join customer_;
 
 #6) Self join - it is used to joins a table with itself
 # for self join reference is required, here U1 and U2 are the reference to Usres_ table
